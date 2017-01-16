@@ -1,0 +1,179 @@
+
+<head>
+  <title>My Abacus Calculator</title>
+
+<style type="text/css">
+
+  body {background-image: url('abacus.jpg');
+        background: cover; 
+        background-repeat: no-repeat;}   
+
+  table {background-position: center;
+        margin-left: 80px;
+        margin-top: -30px;
+  }
+
+  .row2 {font-weight: bold;
+          background-color:#e22b2b; /*red*/
+  }
+  .row3 {font-weight: bold;
+          background-color:#fffbe5; /*cream*/
+
+  }
+  .row4 {font-weight: bold;
+          background-color:#499653; /*green*/
+  }
+  .row5 {font-weight: bold;
+          background-color:#ffff6b; /*yellow*/
+  }
+  .row6 {font-weight: bold;
+          color:white;
+          background-color:#33356d; /*blue*/
+  }
+
+  #move {position: center;
+  }
+  
+  table,td {border:none;
+    font-size: 50px; 
+    text-align: center;
+  }
+
+  td {
+  padding-top: 8px;
+  padding-bottom: 8.5px;
+}
+
+  th tr {text-align:right; 
+    padding-right:50px;
+    border-style: none;
+    border-color: none;}
+
+</style>
+
+</head>
+
+<body>
+
+  <FORM NAME="Calc">
+  <TABLE BORDER=none>
+
+    <tr>
+    <th colspan="4">
+    <input style="text-align: center;" TYPE="text"   NAME="Input" Size="14" id="answer">
+
+    </th>
+    </tr>
+
+
+      <tr>
+      <td>
+          <input class= "row2" TYPE="button" NAME="clear"  VALUE=" Clear " OnCLick="Calc.Input.value =' '">
+      </td>   
+      <td>
+          <input class="row2" TYPE="button" NAME="button"  VALUE="  Avg  " OnClick="getAverage()"> 
+      </td>   
+      <td>
+          <input class="row2" TYPE="button" NAME="DoIt"  VALUE=" Enter" OnClick="Calc.Input.value = eval(Calc.Input.value)">
+      </td> 
+      <td> 
+          <input class= "row2" TYPE="button" NAME="blank" VALUE="      ">
+      </td>    
+      </tr>
+          <br>
+
+      <tr>   
+      <td>
+          <input class= "row3" TYPE="button" NAME="seven"   VALUE="  7  " OnCLick="Calc.Input.value += '7'">
+      </td>   
+      <td>
+          <input class= "row3" TYPE="button" NAME="eight"   VALUE="  8  " OnClick="Calc.Input.value += '8'"> 
+      </td>   
+      <td>
+          <input class= "row3" TYPE="button" NAME="nine"   VALUE="  9  " OnCLick="Calc.Input.value += '9'">
+      </td>   
+      <td>
+          <input class= "row3" TYPE="button" NAME="multiply???"   VALUE="  x  " OnClick="Calc.Input.value += '*'"> 
+      </td>   
+      </tr>
+          <br>
+      <tr>   
+      <td>
+          <input class= "row4" TYPE="button" NAME="four"   VALUE="  4  " OnCLick="Calc.Input.value += '4'">
+      </td>   
+      <td>
+          <input class= "row4" TYPE="button" NAME="five"   VALUE="  5  " OnClick="Calc.Input.value += '5'"> 
+      </td>   
+      <td>
+          <input class= "row4" TYPE="button" NAME="six"   VALUE="  6  " OnCLick="Calc.Input.value += '6'">
+      </td>   
+      <td>
+          <input class= "row4" TYPE="button" NAME="divide"   VALUE="  /  " OnClick="Calc.Input.value += ' / '"> 
+      </td>   
+      </tr>  
+
+          <br>
+      <tr>   
+      <td> 
+          <input class= "row5" TYPE="button" NAME="three"   VALUE="  3  " OnCLick="Calc.Input.value += '3'">
+      </td>   
+      <td>
+          <input class= "row5" TYPE="button" NAME="two"   VALUE="  2  " OnClick="Calc.Input.value += '2'"> 
+      </td>   
+      <td>
+          <input class= "row5" TYPE="button" NAME="one"   VALUE="  1  " OnCLick="Calc.Input.value += '1'">
+      </td>   
+      <td>
+          <input class= "row5" TYPE="button" NAME="plus"  VALUE="  +  " OnClick="Calc.Input.value += ' + '">
+
+      </td>   
+      </tr>    
+          <br>
+
+      <tr>   
+      <td> 
+          <input class= "row6" style colspan="2" TYPE="button" NAME="zero"   VALUE="  0  " OnClick="Calc.Input.value += '0'"> 
+      </td>   
+      <td> 
+          <input class= "row6" TYPE="button" NAME="period"   VALUE="   .  " OnCLick="Calc.Input.value += '.'">
+
+      </td>   
+      <td> 
+          <input class= "row6" TYPE="button" NAME="blank" VALUE="      ">
+      </td>   
+      <td>    
+          <input class= "row6" TYPE="button" NAME="subtract"   VALUE="   -  " OnClick="Calc.Input.value += '-'"> 
+      </td>   
+      </tr>
+          <br>
+
+          </td>
+          </tr>
+
+    </table>
+
+  </form>
+
+</body>
+
+
+<script>
+  function getAverage() {
+    var numsString = document.getElementById("answer").value;
+    var numsArray = numsString.split("+")
+    var i = 0;
+    var sum = 0;
+    while (i < numsArray.length) {
+      sum = sum + Number(numsArray[i]);
+      i = i + 1;
+    }
+
+    var average = sum / numsArray.length;
+    document.getElementById("answer").value = average;
+  }
+</script>
+
+</html>
+
+    
+
